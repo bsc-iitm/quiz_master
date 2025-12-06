@@ -1,0 +1,34 @@
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+<p class="fs-3 text-center">Dashboard</p>
+<!-- add button to open modal for add subject -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSubjectModal">
+  Add Subject
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="addSubjectModal" tabindex="-1" aria-labelledby="addSubjectModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addSubjectModalLabel">Add Subject</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="addSubjectForm">
+          <div class="mb-3">
+            <label for="subjectName" class="form-label">Subject Name</label>
+            <input type="text" class="form-control" id="subjectName" name="subjectName" required>
+          </div>
+          <div class="mb-3">
+            <label for="subjectDescription" class="form-label">Subject Description</label>
+            <textarea class="form-control" id="subjectDescription" name="subjectDescription" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save Subject</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

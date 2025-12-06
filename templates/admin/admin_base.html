@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %} - Quiz Master</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block head_description %}{% endblock %}">
+  <meta name="author" content="{% block head_author %}{% endblock %}">
+
+  <!-- Le styles -->
+  <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='toaster/css/toastr.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='sweetalert2/css/sweetalert2.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+  {% block extrahead %}{% endblock %}
+</head>
+<body>
+<!-- Navbar (example) -->
+<nav class="navbar navbar-default navbar-fixed-top bg-info">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <div class="d-flex">
+      <!-- Left side (Navigation Links) -->
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" href="{{ url_for('auth.admin_dashboard') }}">Home</a>
+        <div class="verticalLine"></div>
+      </div>
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" href="{{ url_for('auth.admin_dashboard') }}">Quiz</a>
+        <div class="verticalLine"></div>
+      </div>
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" href="{{ url_for('auth.admin_dashboard') }}">Summary</a>
+        <div class="verticalLine"></div>
+      </div>
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand" href="{{ url_for('auth.admin_dashboard') }}">Logout</a>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <!-- Right side (Search and Welcome) -->
+      <input type="text" class="form-control mr-2" placeholder="Search...">
+      <p class="ms-2 fs-3 m-0 text-nowrap">Welcome Admin</p>
+    </div>
+  </div>
+</nav>
+
+
+
+
+  <!-- Main content block -->
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='toaster/js/toastr.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='sweetalert2/js/sweetalert2.all.min.js') }}"></script>
+  {% block extrajs %}{% endblock %}
+
+</body>
+</html>   

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-10 col-lg-6 xl-2">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="text-center mb-4 login-heading-color">Welcome to Quiz Master</h2>
+          <p class="text-center text-muted">Registration</p>
+
+          <form method="POST" id="loginForm">
+            <div class="form-group d-flex mb-4">
+              <label for="username" class="text-nowrap me-2">Username (Email)</label>
+              <input type="email" name="username" id="username" class="form-control" placeholder="Enter your email"
+                required>
+            </div>
+
+            <div class="form-group d-flex mb-4">
+              <label for="password" class="text-nowrap me-2">Password</label>
+              <input type="password" name="password" id="password" class="form-control"
+                placeholder="Enter your password" required>
+            </div>
+            <div class="form-group d-flex mb-4">
+              <label for="full_name" class="text-nowrap me-2">Full Name</label>
+              <input type="text" name="full_name" id="full_name" class="form-control"
+                placeholder="Enter your Full Name" required>
+            </div>
+            <div class="form-group d-flex mb-4">
+              <label for="qualification" class="text-nowrap me-2">Qualification</label>
+              <input type="text" name="qualification" id="qualification" class="form-control"
+                placeholder="Enter your Qualification" required>
+            </div>
+            <div class="form-group d-flex mb-4">
+              <label for="dob" class="text-nowrap me-2">Date Of Birth</label>
+              <input type="date" name="dob" id="dob" class="form-control"
+                placeholder="Enter your Full Name" required>
+            </div>
+            
+            <div class="d-grid gap-2 mt-4 d-flex justify-content-center">
+                <div class="me-5">
+                    <button type="button" class="btn btn-primary" id="register">Submit</button>
+                </div>
+              <div class="text-center ">
+                <a href="{{ url_for('index') }}" class="text-primary">Existing User?</a>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
